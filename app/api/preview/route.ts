@@ -3,20 +3,16 @@ import { getJob, updateJob } from '@/lib/jobStore'
 import fs from 'fs'
 
 export async function POST(req: NextRequest) {
-  let jobId: string = ' '
-  
   try {
     const body = await req.json()
-    jobId = body.jobId
+    const jobId: string = body.jobId
     const { fileName, filePath } = body
 
-    // Validação de jobId
-    if (!jobId || typeof jobId !== 'string') {
+    if (!jobId) {
       return NextResponse.json({ error: 'jobId inválido' }, { status: 400 })
     }
 
     const job = await getJob(jobId)
-	
     if (!job || !filePath || !fs.existsSync(filePath)) {
       return NextResponse.json({ error: 'Arquivo não encontrado' }, { status: 404 })
     }
@@ -38,7 +34,6 @@ export async function POST(req: NextRequest) {
     const n8nData = await n8nResponse.json()
     console.log('n8n retornou:', n8nData)
 
-    // n8n retorna array, pegue o primeiro elemento
     const data = Array.isArray(n8nData) ? n8nData[0] : n8nData
     const extractedText = data?.extractedText || ''
     
@@ -96,13 +91,9 @@ JSON:`
     console.error('Erro:', error)
     
     const fallbackPreview = {
-      jobId: jobId || 'unknown',
+      jobId: 'unknown',
       message: 'Preview (teste)',
       summary: { clausesCount: 15, risksCount: 3, notesCount: 7 }
-    }
-    
-    if (jobId) {
-      await updateJob(jobId, { status: 'preview', preview: fallbackPreview })
     }
     
     return NextResponse.json(fallbackPreview)
