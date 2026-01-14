@@ -16,6 +16,7 @@ export async function POST(req: NextRequest) {
     }
 
     const job = await getJob(jobId)
+	
     if (!job || !filePath || !fs.existsSync(filePath)) {
       return NextResponse.json({ error: 'Arquivo não encontrado' }, { status: 404 })
     }
