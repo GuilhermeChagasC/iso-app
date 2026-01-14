@@ -10,6 +10,11 @@ export async function POST(req: NextRequest) {
     jobId = body.jobId
     const { fileName, filePath } = body
 
+    // Validação de jobId
+    if (!jobId || typeof jobId !== 'string') {
+      return NextResponse.json({ error: 'jobId inválido' }, { status: 400 })
+    }
+
     const job = await getJob(jobId)
     if (!job || !filePath || !fs.existsSync(filePath)) {
       return NextResponse.json({ error: 'Arquivo não encontrado' }, { status: 404 })
@@ -29,16 +34,12 @@ export async function POST(req: NextRequest) {
       throw new Error(`n8n erro: ${n8nResponse.status}`)
     }
 
-const n8nData = await n8nResponse.json()
-console.log('n8n retornou:', n8nData)
+    const n8nData = await n8nResponse.json()
+    console.log('n8n retornou:', n8nData)
 
-// n8n retorna array, pegue o primeiro elemento
-const data = Array.isArray(n8nData) ? n8nData[0] : n8nData
-
-const extractedText =
-  typeof data?.extractedText === 'string'
-    ? data.extractedText
-    : ''
+    // n8n retorna array, pegue o primeiro elemento
+    const data = Array.isArray(n8nData) ? n8nData[0] : n8nData
+    const extractedText = data?.extractedText || ''
     
     if (!extractedText) {
       console.warn('n8n nao retornou texto')
