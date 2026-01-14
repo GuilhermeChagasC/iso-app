@@ -1,0 +1,57 @@
+{
+  "1855c5b1-792e-4ef8-a6b1-fe3b2d42265b": {
+    "id": "1855c5b1-792e-4ef8-a6b1-fe3b2d42265b",
+    "status": "preview",
+    "createdAt": "2026-01-09T21:45:20.467Z",
+    "preview": {
+      "clausesCount": 0,
+      "risksCount": 0,
+      "notesCount": 0,
+      "message": "Este é um resumo automático."
+    }
+  },
+  "ceec3034-815c-43bd-8ad8-03693c5c42a6": {
+    "id": "ceec3034-815c-43bd-8ad8-03693c5c42a6",
+    "status": "preview",
+    "createdAt": "2026-01-09T21:54:06.841Z",
+    "preview": {
+      "clausesCount": 0,
+      "risksCount": 0,
+      "notesCount": 0,
+      "message": "Este é um resumo automático."
+    }
+  },
+  "e5085adb-8000-4104-8712-89863146fa86": {
+    "id": "e5085adb-8000-4104-8712-89863146fa86",
+    "status": "preview",
+    "createdAt": "2026-01-09T21:54:56.241Z",
+    "preview": {
+      "clausesCount": 0,
+      "risksCount": 0,
+      "notesCount": 0,
+      "message": "Este é um resumo automático."
+    }
+  },
+  "12d05afb-d377-4c09-b209-63a1d8a5d7dc": {
+    "id": "12d05afb-d377-4c09-b209-63a1d8a5d7dc",
+    "status": "paid",
+    "createdAt": "2026-01-09T22:13:40.741Z",
+    "preview": {
+      "clausesCount": 0,
+      "risksCount": 0,
+      "notesCount": 0,
+      "message": "Este é um resumo automático."
+    }
+  },
+  "35717836-67fd-42a3-b985-532766c7b11c": {
+    "id": "35717836-67fd-42a3-b985-532766c7b11c",
+    "status": "preview",
+    "createdAt": "2026-01-09T22:51:46.690Z",
+    "preview": {
+      "clausesCount": 0,
+      "risksCount": 0,
+      "notesCount": 0,
+      "message": "Este é um resumo automático."
+    }
+  }
+}

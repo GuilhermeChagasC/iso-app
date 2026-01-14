@@ -1,0 +1,133 @@
+{
+  "2c4ee1e5-4276-4f76-9ef1-a32058082475": {
+    "id": "2c4ee1e5-4276-4f76-9ef1-a32058082475",
+    "scope": "9001",
+    "locale": "pt-PT",
+    "files": [
+      {
+        "name": "declaracao_titularidade (2).pdf",
+        "pages": 10
+      }
+    ],
+    "status": "previewed",
+    "createdAt": "2026-01-06T15:46:01.500Z",
+    "updatedAt": "2026-01-06T15:46:02.479Z",
+    "preview": {
+      "ok": true,
+      "limits": {
+        "files": 1,
+        "pages": 10,
+        "maxFiles": 5,
+        "maxPages": 200
+      },
+      "message": "Preview gerado. O relatório completo será entregue após o pagamento."
+    }
+  },
+  "4588da7c-50e8-4eb9-87dc-431177b52ae3": {
+    "id": "4588da7c-50e8-4eb9-87dc-431177b52ae3",
+    "scope": "9001",
+    "locale": "pt-PT",
+    "files": [
+      {
+        "name": "declaracao_titularidade (2).pdf",
+        "pages": 10
+      }
+    ],
+    "status": "previewed",
+    "createdAt": "2026-01-06T15:48:19.019Z",
+    "updatedAt": "2026-01-06T15:48:19.768Z",
+    "preview": {
+      "ok": true,
+      "limits": {
+        "files": 1,
+        "pages": 10,
+        "maxFiles": 5,
+        "maxPages": 200
+      },
+      "message": "Preview gerado. O relatório completo será entregue após o pagamento."
+    }
+  },
+  "0c4ec311-8cf5-46db-bb6e-a499fb171328": {
+    "id": "0c4ec311-8cf5-46db-bb6e-a499fb171328",
+    "scope": "9001",
+    "locale": "pt-PT",
+    "files": [
+      {
+        "name": "declaracao_titularidade (2).pdf",
+        "pages": 10
+      }
+    ],
+    "status": "previewed",
+    "createdAt": "2026-01-06T15:57:34.231Z",
+    "updatedAt": "2026-01-06T15:57:35.019Z",
+    "preview": {
+      "ok": true,
+      "limits": {
+        "files": 1,
+        "pages": 10,
+        "maxFiles": 5,
+        "maxPages": 200
+      },
+      "message": "Preview gerado. O relatório completo será entregue após o pagamento."
+    }
+  },
+  "f559cc3d-7f87-48eb-b039-5a5de125bde0": {
+    "id": "f559cc3d-7f87-48eb-b039-5a5de125bde0",
+    "scope": "9001",
+    "locale": "pt-PT",
+    "files": [
+      {
+        "name": "declaracao_titularidade (2).pdf",
+        "pages": 10
+      }
+    ],
+    "status": "paid",
+    "createdAt": "2026-01-06T16:05:59.756Z",
+    "updatedAt": "2026-01-06T16:06:23.766Z",
+    "preview": {
+      "ok": true,
+      "limits": {
+        "files": 1,
+        "pages": 10,
+        "maxFiles": 5,
+        "maxPages": 200
+      },
+      "message": "Preview gerado. O relatório completo será entregue após o pagamento."
+    }
+  },
+  "c05cce5b-3b73-4eef-88ff-31ebbd3f89b2": {
+    "id": "c05cce5b-3b73-4eef-88ff-31ebbd3f89b2",
+    "scope": "9001",
+    "locale": "pt-PT",
+    "files": [
+      {
+        "name": "declaracao_titularidade (2).pdf",
+        "pages": 10
+      }
+    ],
+    "status": "done",
+    "createdAt": "2026-01-06T16:14:10.068Z",
+    "updatedAt": "2026-01-06T16:52:04.878Z",
+    "preview": {
+      "ok": true,
+      "limits": {
+        "files": 1,
+        "pages": 10,
+        "maxFiles": 5,
+        "maxPages": 200
+      },
+      "message": "Preview gerado. O relatório completo será entregue após o pagamento."
+    },
+    "fullResult": {
+      "ok": true,
+      "summary": {
+        "clausesCount": 0,
+        "risksCount": 0,
+        "notesCount": 0
+      },
+      "clauses": [],
+      "risks": [],
+      "notes": []
+    }
+  }
+}
