@@ -3,7 +3,7 @@ import { getJob, updateJob } from '@/lib/jobStore'
 import fs from 'fs'
 
 export async function POST(req: NextRequest) {
-  let jobId: string | undefined
+  let jobId: string = ' '
   
   try {
     const body = await req.json()
