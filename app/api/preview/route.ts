@@ -5,7 +5,7 @@ import fs from 'fs'
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const jobId: string = body.jobId
+    const jobId = body.jobId as string
     const { fileName, filePath } = body
 
     if (!jobId) {
