@@ -15,7 +15,8 @@ export async function createJob(id: string, data: CreateJobData) {
   })
 }
 
-export async function getJob(id: string) {
+export async function getJob(id: string | undefined) {
+  if (!id) return null
   return await prisma.job.findUnique({
     where: { id },
   })
