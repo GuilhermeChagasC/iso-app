@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getJob, updateJob } from '@/lib/jobStore'
+import { getJob, updateJob } from '../../../lib/jobStore'
 import fs from 'fs'
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const jobId = body.jobId as string
+    const jobId = body.jobId as string | undefined
     const { fileName, filePath } = body
 
     if (!jobId) {
@@ -85,8 +85,8 @@ JSON:`
     }
 
     await updateJob(jobId, { status: 'preview', preview })
-    return NextResponse.json(preview)
 
+    return NextResponse.json(preview)
   } catch (error: any) {
     console.error('Erro:', error)
     
