@@ -8,10 +8,12 @@ export async function POST(req: NextRequest) {
     const jobId = body.jobId as string | undefined
     const { fileName, filePath } = body
 
-    if (!jobId) {
+    // Validação que TypeScript vai reconhecer
+    if (!jobId || typeof jobId !== 'string') {
       return NextResponse.json({ error: 'jobId inválido' }, { status: 400 })
     }
 
+    // Agora jobId é definitivamente string
     const job = await getJob(jobId)
     if (!job || !filePath || !fs.existsSync(filePath)) {
       return NextResponse.json({ error: 'Arquivo não encontrado' }, { status: 404 })
