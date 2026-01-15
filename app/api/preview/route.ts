@@ -7,12 +7,12 @@ export async function POST(req: NextRequest) {
     const body = await req.json()
     const { fileName, filePath } = body
     
-    // Extrair jobId e garantir que é string
-    const jobId: string = body.jobId
-    
-    if (!jobId) {
+    // Validar e extrair jobId com type assertion
+    if (!body.jobId || typeof body.jobId !== 'string') {
       return NextResponse.json({ error: 'jobId inválido' }, { status: 400 })
     }
+    
+    const jobId = body.jobId as string // Agora TypeScript sabe que é string
 
     const job = await getJob(jobId)
     if (!job || !filePath || !fs.existsSync(filePath)) {
