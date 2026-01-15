@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getJob, updateJob } from '../../../lib/jobStore'
+import { getJob, updateJob } from '../../../../lib/jobStore'
 import fs from 'fs'
 
 export async function POST(req: NextRequest) {
@@ -12,8 +12,9 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'jobId inválido' }, { status: 400 })
     }
 
-    // Usar non-null assertion operator para forçar o tipo
-    const job = await getJob(jobId!)
+    // TypeScript não reconhece a validação acima, então forçamos o tipo
+    const validJobId: string = jobId
+    const job = await getJob(validJobId)
     
     if (!job) {
       return NextResponse.json({ error: 'Job não encontrado' }, { status: 404 })
