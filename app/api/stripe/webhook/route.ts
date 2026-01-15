@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import Stripe from 'stripe'
-import { updateJob } from '@/lib/jobStore'
-import { generateFullReport } from '@/lib/job.service'
+import { updateJob } from '../../../../lib/jobStore'
+import { generateFullReport } from '../../../../lib/job.service'
 
 export const runtime = 'nodejs'
 

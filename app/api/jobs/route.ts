@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { createJob } from '@/lib/jobStore'
+import { getJob, updateJob } from '../../../lib/jobStore'
 import { randomUUID } from 'crypto'
 
 export async function POST(req: Request) {
