@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getJob, updateJob } from '../../../../lib/jobStore'
+import { getJob, updateJob } from '../../../lib/jobStore'
 import fs from 'fs'
 
 export async function POST(req: NextRequest) {
