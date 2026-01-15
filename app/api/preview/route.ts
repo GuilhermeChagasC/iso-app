@@ -5,17 +5,15 @@ import fs from 'fs'
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { fileName, filePath } = body
-    
-    // Validar e extrair jobId com type assertion
-    if (!body.jobId || typeof body.jobId !== 'string') {
-      return NextResponse.json({ error: 'jobId inválido' }, { status: 400 })
-    }
-    
-    const jobId = body.jobId as string // Agora TypeScript sabe que é string
+    const { jobId, fileName, filePath } = body
 
     const job = await getJob(jobId)
-    if (!job || !filePath || !fs.existsSync(filePath)) {
+    
+    if (!job) {
+      return NextResponse.json({ error: 'Job não encontrado' }, { status: 404 })
+    }
+    
+    if (!filePath || !fs.existsSync(filePath)) {
       return NextResponse.json({ error: 'Arquivo não encontrado' }, { status: 404 })
     }
 
@@ -26,7 +24,7 @@ export async function POST(req: NextRequest) {
     const n8nResponse = await fetch('https://automations.isoreportsglobal.com/webhook/iso/preview', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ jobId, fileName, fileContent: base64Content }),
+      body: JSON.stringify({ jobId: job.id, fileName, fileContent: base64Content }),
     })
 
     if (!n8nResponse.ok) {
@@ -81,12 +79,12 @@ JSON:`
     const analysis = JSON.parse(cleanJson)
 
     const preview = {
-      jobId,
+      jobId: job.id,
       message: 'Preview gerado com IA',
       summary: analysis.summary
     }
 
-    await updateJob(jobId, { status: 'preview', preview })
+    await updateJob(job.id, { status: 'preview', preview })
 
     return NextResponse.json(preview)
   } catch (error: any) {
