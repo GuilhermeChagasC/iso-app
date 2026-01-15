@@ -5,15 +5,15 @@ import fs from 'fs'
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const jobId = body.jobId as string | undefined
     const { fileName, filePath } = body
-
-    // Validação que TypeScript vai reconhecer
-    if (!jobId || typeof jobId !== 'string') {
+    
+    // Extrair jobId e garantir que é string
+    const jobId: string = body.jobId
+    
+    if (!jobId) {
       return NextResponse.json({ error: 'jobId inválido' }, { status: 400 })
     }
 
-    // Agora jobId é definitivamente string
     const job = await getJob(jobId)
     if (!job || !filePath || !fs.existsSync(filePath)) {
       return NextResponse.json({ error: 'Arquivo não encontrado' }, { status: 404 })
