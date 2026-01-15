@@ -7,7 +7,13 @@ export async function POST(req: NextRequest) {
     const body = await req.json()
     const { jobId, fileName, filePath } = body
 
-    const job = await getJob(jobId)
+    // Validação antes de usar
+    if (!jobId || typeof jobId !== 'string') {
+      return NextResponse.json({ error: 'jobId inválido' }, { status: 400 })
+    }
+
+    // Usar non-null assertion operator para forçar o tipo
+    const job = await getJob(jobId!)
     
     if (!job) {
       return NextResponse.json({ error: 'Job não encontrado' }, { status: 404 })
